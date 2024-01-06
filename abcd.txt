@@ -638,15 +638,5 @@ void Adafruit_BME280_Humidity::getSensor(sensor_t *sensor) {
     @param  event Sensor event object that will be populated
     @returns True
 */
-/**************************************************************************/
-bool Adafruit_BME280_Humidity::getEvent(sensors_event_t *event) {
-  /* Clear the event */
-  memset(event, 0, sizeof(sensors_event_t));
 
-  event->version = sizeof(sensors_event_t);
-  event->sensor_id = _sensorID;
-  event->type = SENSOR_TYPE_RELATIVE_HUMIDITY;
-  event->timestamp = millis();
-  event->relative_humidity = _theBME280->readHumidity();
-  return true;
 }
